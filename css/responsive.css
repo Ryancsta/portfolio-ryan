@@ -1,0 +1,287 @@
+/* ====== Media Queries ====== */
+
+/* Large Devices (Desktops) */
+@media (max-width: 1200px) {
+  .container {
+      max-width: 992px;
+  }
+  
+  .hero-text h1 {
+      font-size: 3.2rem;
+  }
+  
+  .hero-text h2 {
+      font-size: 1.6rem;
+  }
+}
+
+/* Medium Devices (Tablets) */
+@media (max-width: 992px) {
+  .container {
+      max-width: 768px;
+  }
+  
+  .hero-content {
+      flex-direction: column;
+      text-align: center;
+  }
+  
+  .hero-text h1 {
+      font-size: 2.8rem;
+  }
+  
+  .hero-text h2 {
+      font-size: 1.5rem;
+  }
+  
+  .social-links {
+      justify-content: center;
+  }
+  
+  .hero-btns {
+      justify-content: center;
+  }
+  
+  .about-content, 
+  .skills-content {
+      flex-direction: column;
+      gap: 2rem;
+  }
+  
+  .about-img .experience {
+      bottom: -10px;
+      right: 20px;
+  }
+  
+  .resume-content {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+  }
+  
+  .contact-content {
+      grid-template-columns: 1fr;
+  }
+  
+  .contact-form {
+      margin-top: 2rem;
+  }
+  
+  .projects-grid {
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
+/* Small Devices (Landscape Phones) */
+@media (max-width: 768px) {
+  html {
+      font-size: 14px;
+  }
+  
+  .container {
+      max-width: 576px;
+      padding: 0 1.5rem;
+  }
+  
+  section {
+      padding: 4rem 0;
+  }
+  
+  .section-title h3 {
+      font-size: 2rem;
+  }
+  
+  .nav-links {
+      position: fixed;
+      top: 72px;
+      left: 0;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 0;
+      gap: 1.5rem;
+      background-color: var(--white);
+      transform: translateY(-150%);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+      z-index: 999;
+  }
+  
+  .nav-links.active {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+  }
+  
+  .hamburger {
+      display: block;
+  }
+  
+  .hamburger.active div:nth-child(1) {
+      transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  
+  .hamburger.active div:nth-child(2) {
+      opacity: 0;
+  }
+  
+  .hamburger.active div:nth-child(3) {
+      transform: rotate(45deg) translate(-5px, -6px);
+  }
+  
+  .about-info {
+      grid-template-columns: 1fr;
+  }
+  
+  .skills-grid,
+  .services-grid,
+  .certificates {
+      grid-template-columns: 1fr;
+  }
+  
+  .contact-form {
+      padding: 2rem;
+  }
+  
+  .footer-content {
+      grid-template-columns: 1fr;
+  }
+}
+
+/* Extra Small Devices (Portrait Phones) */
+@media (max-width: 576px) {
+  .container {
+      padding: 0 1rem;
+  }
+  
+  .hero {
+      padding: 10rem 0 6rem;
+  }
+  
+  .hero-text h1 {
+      font-size: 2.3rem;
+  }
+  
+  .hero-text h2 {
+      font-size: 1.2rem;
+  }
+  
+  .profile-img {
+      width: 220px;
+      height: 220px;
+  }
+  
+  .hero-btns {
+      flex-direction: column;
+      gap: 1rem;
+  }
+  
+  .hero-btns .btn {
+      width: 100%;
+  }
+  
+  .section-title h3 {
+      font-size: 1.8rem;
+  }
+  
+  .about-img .experience {
+      padding: 1rem;
+      right: 10px;
+      bottom: -10px;
+  }
+  
+  .about-img .experience h4 {
+      font-size: 2rem;
+  }
+  
+  .about-text h3 {
+      font-size: 1.6rem;
+  }
+  
+  .projects-filter {
+      flex-direction: column;
+      gap: 0.5rem;
+  }
+  
+  .filter-btn {
+      width: 100%;
+      text-align: center;
+  }
+  
+  .projects-grid {
+      grid-template-columns: 1fr;
+  }
+  
+  .contact-form {
+      padding: 1.5rem;
+  }
+}
+
+/* Height-Based Media Queries */
+@media (max-height: 800px) {
+  .hero {
+      padding: 10rem 0 6rem;
+  }
+  
+  .profile-img {
+      width: 220px;
+      height: 220px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .hero,
+  .services,
+  .projects,
+  .contact,
+  footer,
+  .back-to-top,
+  .hamburger {
+      display: none;
+  }
+  
+  header {
+      position: relative;
+      box-shadow: none;
+  }
+  
+  .nav-links {
+      display: none;
+  }
+  
+  section {
+      padding: 2rem 0;
+  }
+  
+  .about,
+  .skills,
+  .resume {
+      background-color: white;
+      color: black;
+  }
+  
+  .about-img .experience {
+      background-color: #444;
+  }
+  
+  .timeline-item,
+  .certificate,
+  .skill-card {
+      break-inside: avoid;
+  }
+  
+  .timeline:before {
+      background-color: #444;
+  }
+  
+  a {
+      color: black;
+      text-decoration: none;
+  }
+  
+  .container {
+      max-width: 100%;
+  }
+}
